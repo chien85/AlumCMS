@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlumUI", "AlumUI\AlumUI.csproj", "{BA427DF6-7ABD-47E9-89C6-D1B385AD40AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlumUI.Tests", "AlumUI.Tests\AlumUI.Tests.csproj", "{5D91677A-D850-44D5-9BEA-6152EAC9A2F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainLib", "DomainLib\DomainLib.csproj", "{197F4528-73A1-4250-997A-7CFA15AD42EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA427DF6-7ABD-47E9-89C6-D1B385AD40AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA427DF6-7ABD-47E9-89C6-D1B385AD40AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA427DF6-7ABD-47E9-89C6-D1B385AD40AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA427DF6-7ABD-47E9-89C6-D1B385AD40AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D91677A-D850-44D5-9BEA-6152EAC9A2F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D91677A-D850-44D5-9BEA-6152EAC9A2F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D91677A-D850-44D5-9BEA-6152EAC9A2F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D91677A-D850-44D5-9BEA-6152EAC9A2F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{197F4528-73A1-4250-997A-7CFA15AD42EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{197F4528-73A1-4250-997A-7CFA15AD42EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{197F4528-73A1-4250-997A-7CFA15AD42EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{197F4528-73A1-4250-997A-7CFA15AD42EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
