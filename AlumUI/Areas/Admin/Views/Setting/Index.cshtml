@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Settings Index</h2>
+@using(Html.BeginForm("Index","Setting",FormMethod.Post))
+{
+    <label>General Settings</label>
+    <div class="form-group">
+        <label> Site Name</label>
+        <br />
+        <textarea name="SiteName">@ViewBag.SiteName</textarea>   
+             <br />
+        <label> Admin Email</label>
+        <br />
+        <textarea name="AdminEmail">@ViewBag.AdminEmail</textarea>
+    </div>
+    <div class="form-group">
+        <label> Seo Settings</label>
+        <div class="form-group">
+            <label>Home meta Description</label>
+            <textarea name="MetaDesc">@ViewBag.MetaDesc</textarea>
+            <br />
+            <label> Home meta tile</label>
+            <textarea name="MetaTitle">@ViewBag.MetaTitle</textarea>
+        </div>
+    </div>
+            <div class="panel-footer">
+              
+            <input type="submit" value="Save" class="btn btn-primary" />
+            @Html.ActionLink("Cancel and return to List", "Index", null, new
+       {
+           @class = "btn btn-default"
+       }
+       )
+        </div>
+}

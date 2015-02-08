@@ -1,0 +1,28 @@
+﻿@model DomainLib.Entities.Category
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using(Html.BeginForm("Edit","Category",FormMethod.Post))
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            @Html.HiddenFor(m=>m.Idcategory)
+        </div>
+        <div class="panel-group">
+            <label>Name:</label>
+            <br />
+            @Html.TextBoxFor(m=>m.Catename)
+        </div>
+        <div class="panel-group">
+            <input type="submit" value="Ok" />
+        </div>
+    </div>
+
+}
+
+

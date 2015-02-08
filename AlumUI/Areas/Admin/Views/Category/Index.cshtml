@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DomainLib.Entities.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <p> List of categories</p>
+        <div class="row">
+            <div class="col-lg-1">
+                <label>ID </label>
+            </div>
+            <div class="col-lg-2">
+
+                <label>Category name</label>
+            </div>
+            <div class="col-lg-9">
+                <label>Actions</label>
+            </div>
+        </div>
+    </div>
+    @foreach(var p in Model)
+    { 
+        
+    <div class="panel-group">
+ 
+
+
+        <div class="row">
+            <div class="col-lg-1">
+                <label>@p.Idcategory </label>
+            </div>
+            <div class="col-lg-2">
+
+                <label>@p.Catename</label>
+                </div>
+            <div class="col-lg-9">
+                @Html.ActionLink("Edit", "Edit", new { idcategory = p.Idcategory }, new { @class = "btn btn-default" })
+                @Html.ActionLink("Manage", "Manage", new { idcategory = p.Idcategory }, new { @class = "btn btn-default" })
+
+
+                @Html.ActionLink("Delete", "Delete", new { idcategory = p.Idcategory }, new { @class = "btn btn-default" })
+            </div>
+        </div>
+     </div>
+    }
+    @Html.ActionLink("Create a new Category", "Create",null, new { @class = "btn btn-default" })
+</div>

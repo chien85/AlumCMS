@@ -1,0 +1,91 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/ErrorStyles.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.9.0.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <title>Administration</title>
+</head>
+<body>
+    <div>
+
+        @if (TempData["message"] != null)
+        {
+            <div class="alert alert-success">@TempData["message"]</div>
+        }
+
+
+    </div>
+
+    <div class="container">
+        <div class="navbar navbar-default">
+
+            <div class="navbar-brand">
+                Alumc Website Administration
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="row">
+
+                <!-- for right menu -->
+                <div class="col-lg-3">
+                    <div class="list-group">
+                        <a class="list-group-item" href="~/"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a>
+                        <a class="list-group-item" href="~/Admin/Dashboard/Index"><i class="fa fa-home fa-fw"></i>&nbsp; Dashboard</a>
+
+                        <a class="list-group-item" href="~/Admin/Content/Index"><i class="fa fa-home fa-fw"></i>&nbsp; Content Manager</a>
+                        <a class="list-group-item" href="~/Admin/Category/Index"><i class="fa fa-pencil fa-fw"></i>&nbsp; Category Manager</a>
+                        <a class="list-group-item" href="~/Admin/RoleAdmin/Index"><i class="fa fa-pencil fa-fw"></i>&nbsp; Roles Manager</a>
+
+                        <a class="list-group-item" href="~/Admin/Setting/Index"><i class="fa fa-pencil fa-fw"></i>&nbsp; Setting Manager</a>
+
+                        <a class="list-group-item" href="~/Admin/User/Index"><i class="fa fa-cog fa-fw"></i>&nbsp;User Manager</a>
+
+                    </div>
+                </div>
+
+                <!--for content right-->
+                <div class="col-lg-9 bg-primary">
+
+                    @RenderBody()
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--footer -->
+    <section>
+        <div class="panel panel-footer text-center">
+  
+            <div class="panel-body">
+                <p>(c) 2015, Nguyen Van Chien </p>
+                <p> Support:chienqx@yahoo.com </p>
+
+            </div>
+        </div>
+
+    </section>
+
+</body>
+</html>

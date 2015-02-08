@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DomainLib.Entities.Subcategory>
+
+@{
+    ViewBag.Title = "Manage";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Manage</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <p> List of subcategories</p>
+        <div class="row">
+            <div class="col-lg-1">
+                <label>ID </label>
+            </div>
+            <div class="col-lg-2">
+
+                <label>SubCategory name</label>
+            </div>
+            <div class="col-lg-9">
+                <label>Actions</label>
+            </div>
+        </div>
+    </div>
+    @foreach (var p in Model)
+    {
+
+        <div class="panel-group">
+
+
+
+            <div class="row">
+                <div class="col-lg-1">
+                    <label>@p.IdSubcategory </label>
+                </div>
+                <div class="col-lg-2">
+
+                    <label>@p.Subcatename</label>
+                </div>
+                <div class="col-lg-9">
+                    @Html.ActionLink("EditSub", "EditSub", new { idsubcategory = p.IdSubcategory }, new { @class = "btn btn-default" })
+
+
+                    @Html.ActionLink("DeleteSub", "DeleteSub", new { idsubcategory = p.IdSubcategory }, new { @class = "btn btn-default" })
+                </div>
+            </div>
+        </div>
+    }
+    @Html.ActionLink("Create a new Category", "CreateSub", null, new { @class = "btn btn-default" })
+</div>
+

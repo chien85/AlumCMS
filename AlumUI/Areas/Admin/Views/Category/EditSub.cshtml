@@ -1,0 +1,30 @@
+﻿@model DomainLib.Entities.Subcategory
+
+@{
+    ViewBag.Title = "EditSub";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>EditSub</h2>
+@using (Html.BeginForm("EditSub", "Category", FormMethod.Post))
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            @Html.HiddenFor(m => m.IdSubcategory)
+        </div>
+        <div class="panel-group">
+            <label>Name:</label>
+            <br />
+            @Html.TextBoxFor(m => m.Subcatename)
+        </div>
+        <div class="panel-group">
+            <label>Choose a main category </label>
+            @Html.DropDownList("idcategory",(SelectList)ViewBag.list)
+        </div>
+        <div class="panel-group">
+            <input type="submit" value="Ok" />
+        </div>
+    </div>
+
+}
+

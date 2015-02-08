@@ -1,0 +1,42 @@
+﻿@model  IEnumerable<DomainLib.Entities.Content>
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+
+        <h2>All Articles</h2>
+    </div> 
+
+
+    <div class="panel-body">
+    <table class="table table-striped table-bordered ">
+        <tr>
+            <th>ID </th>
+            <th>Title </th>
+            <th>Teaser</th>
+            <th>Date Creation</th>
+            <th>Date Modified</th>
+            <th>Action</th>
+        </tr>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td class="text-center">@item.IdContent</td>
+                <td class="text-center">@Html.ActionLink(item.Title,"Edit", new {item.IdContent})</td>
+                <td class="text-center">@item.Teaser</td>
+                <td class="text-right">@item.CreationDate</td>
+                <td class="text-right">@item.UpdatedDate</td>
+                <td class="text-center">@Html.ActionLink("Delete", "Delete", new { idcontent=item.IdContent})</td>
+            </tr>
+        }
+        </table>
+        <div class="panel-footer">
+            @Html.ActionLink("Add new article", "Create", FormMethod.Post, new  { @class="btn btn-default"})
+        </div>
+    </div>
+
+
+</div>
