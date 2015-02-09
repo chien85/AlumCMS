@@ -1,0 +1,39 @@
+﻿@model  AlumUI.Models.ArticlesForPages
+
+@{
+    ViewBag.Title = "Pages";
+    Layout = "~/Views/Shared/_LayoutArticle.cshtml";
+}
+
+<h2>List of articles</h2>
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("Home","Main")</li>
+<li>@Html.RouteLink(Model.category.Catename, "PageOnlyCate", new { idcategory = Model.category.Idcategory })</li>
+   @if (Model.subcategory != null) { 
+     <li>@Html.RouteLink(Model.subcategory.Subcatename, "Default2", new { idcategory = Model.category.Idcategory, idsub=Model.subcategory.IdSubcategory })</li>
+   }
+</ol>
+
+
+@foreach(var p in Model.articles)
+{
+    <div>
+        <hr />
+        <p>@p.CreationDate</p>
+        <h2>@Html.RouteLink(@p.Title, "Article", new { idcontent = p.IdContent }) </h2>
+        <p>@Html.Raw(@p.Teaser)</p>
+        
+    </div>
+}
+<div>
+    @if(Model.subcategory!=null)
+    {
+    @Html.PageLinks(Model.PagingInfo, x => Url.RouteUrl("Pages1",new { idcategory = Model.category.Idcategory, idsub = Model.subcategory.IdSubcategory, page = x }))
+        }
+    else if(Model.subcategory==null)
+    {
+            @Html.PageLinks(Model.PagingInfo, y => Url.RouteUrl("PageOnlyCate", new { idcategory = Model.category.Idcategory, idsub=0, page = y }))
+
+    }
+    
+</div>

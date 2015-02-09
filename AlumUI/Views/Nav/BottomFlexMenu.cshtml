@@ -1,0 +1,26 @@
+﻿@model AlumUI.BaseUI.Entities.MenuTree
+
+<div>
+    <ul>
+        @foreach (var pair in Model.tree)
+        {
+            <li>
+                <a href="@Url.RouteUrl("PageOnlyCate", new { idcategory = pair.Key.Idcategory })">@pair.Key.Catename </a>
+
+
+                <p>
+                    <ul >
+                        @foreach (var subcate in pair.Value)
+                    {
+                            <li>
+                                @Html.RouteLink(subcate.Subcatename, "Default2", new { idcategory = pair.Key.Idcategory, idsub = subcate.IdSubcategory })
+                            </li>
+                    }
+                    </ul>
+                </p>
+            </li>
+        }
+
+    </ul>
+
+</div>

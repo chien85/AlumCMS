@@ -1,0 +1,15 @@
+﻿@model AlumUI.Models.ArticlesForHomeControllerModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+@*<h1> Intro: @Model.Intro</h1>*@
+@foreach (var p in Model.articles)
+{
+
+    <div class="homebox">
+        @Html.Partial("Article", p)
+
+
+    </div>
+}

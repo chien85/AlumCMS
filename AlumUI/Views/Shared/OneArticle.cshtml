@@ -1,0 +1,13 @@
+﻿
+@model DomainLib.Entities.Content
+
+
+
+<div class="row">
+    <div class="col-lg-2"><a href="~/"> <span class="glyphicon glyphicon-backward"></span></a></div>
+    <div class="col-lg-10 text-right">@Model.CreationDate</div>
+</div>
+            <h2 class="text-center">@Html.RouteLink(@Model.Title,"Article",  new { idcontent = Model.IdContent }) </h2>
+<p>@Model.Teaser</p>
+            <p>@Html.Raw(@Model.Body)</p>
+<p class="text-right"><span>@Model.TagLine</span><span>Views: @Model.ViewCount</span></p>

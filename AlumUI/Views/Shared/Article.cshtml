@@ -1,0 +1,20 @@
+﻿@model DomainLib.Entities.Content
+
+
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-body color">
+                
+                @*<span class="glyphicon glyphicon-search"></span>*@
+                <div class="row"> 
+                <div class="col-lg-2"><span class="glyphicon glyphicon-search"></span></div>
+                <div class="col-lg-10 text-right">@Model.CreationDate</div>
+                </div>
+                <h4 class="text-center">@Html.RouteLink(@Model.Title, "Article", new { idcontent = Model.IdContent, slug=Model.Seo })  </h4>
+                <p class="text-left">@Model.Teaser ...</p>
+                <p class="text-center">@Html.RouteLink("Learn more", "Article", new { idcontent = Model.IdContent, slug=Model.Seo }, new { @class="btn btn-info"})</p>
+            </div>
+            
+        </div>
+    </div>
+    

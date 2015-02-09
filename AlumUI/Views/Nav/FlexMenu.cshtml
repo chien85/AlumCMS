@@ -1,0 +1,24 @@
+﻿@model AlumUI.BaseUI.Entities.MenuTree
+
+<div>
+    <ul class="nav navbar-nav">
+        @foreach (var pair in Model.tree)
+        {
+            <li class="dropdown">
+                <a href="@Url.RouteUrl("Cates", new { idcategory = pair.Key.Idcategory })" class="dropdown-toggle" data-toggle="dropdown">@pair.Key.Catename <b class="caret"></b></a>
+                
+
+                <ul class="dropdown-menu">
+                    @foreach (var subcate in pair.Value)
+                    {
+                        <li>
+                            @Html.RouteLink(subcate.Subcatename, "Default2", new { idcategory = pair.Key.Idcategory, idsub = subcate.IdSubcategory })
+                        </li>
+                    }
+                </ul>
+            </li>
+        }
+
+    </ul>
+
+</div>

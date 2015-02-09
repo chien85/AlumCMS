@@ -1,0 +1,26 @@
+﻿@model AlumUI.Models.Login
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<h2>Login</h2>
+@Html.ValidationSummary()
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken();
+    <div class="row">
+        <div class="col-md-6 col-md-offset-4">
+            <div class="form-group">
+                <label>Name</label>
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control", style = "width:20em;" })
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                @Html.PasswordFor(x => x.Password, new { @class = "form-control", style = "width:20em;" })
+            </div>
+            <button class="btn btn-primary" type="submit">Log In</button>
+        </div>
+</div>
+}

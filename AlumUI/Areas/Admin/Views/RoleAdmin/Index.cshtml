@@ -7,23 +7,29 @@
 
 <h2>Index</h2>
 
-<div class="panel panel-primary">
+<div class="panel panel-primary ">
     <div class="panel-heading">Roles</div>
-    <table class="table table-striped">
-        <tr><th>ID</th><th>Name</th><th>Totals</th><th>Actions</th></tr>
-        @foreach (var role in Model) {
-        <tr>
-            <td>@role.Id</td>
-            <td>@role.Name</td>
-            <td>Reserved...</td>
-            <td>@Html.ActionLink("Edit", "Edit", new { id = role.Id },
+    <table class="table table-bordered bg-primary">
+        <thead>
+            <tr><th>ID</th><th>Name</th><th>Totals</th><th>Actions</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var role in Model)
+            {
+                <tr>
+                    <td>@role.Id</td>
+                    <td>@role.Name</td>
+                    <td>Reserved...</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = role.Id },
                                     new { @class = "btn btn-primary btn-xs" })
-            @Html.ActionLink("Delete", "Delete", new { id = role.Id },
+                        @Html.ActionLink("Delete", "Delete", new { id = role.Id },
                                     new { @class = "btn btn-primary btn-xs" })
-            </td>
-            </tr>
-        }
-               </table>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
             
             @Html.ActionLink("Create", "Create", null, new { @class = "btn btn-primary" })

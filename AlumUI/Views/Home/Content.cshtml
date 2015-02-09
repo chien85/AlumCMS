@@ -1,0 +1,12 @@
+﻿@model DomainLib.Entities.Content
+
+@{
+    ViewBag.Title = "Content";
+    Layout = "~/Views/Shared/_LayoutArticle.cshtml";
+}
+
+<div class="homebox">
+    @Html.Partial("OneArticle", Model)
+
+
+</div>

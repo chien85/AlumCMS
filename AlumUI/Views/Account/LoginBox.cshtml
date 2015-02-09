@@ -1,0 +1,18 @@
+﻿
+@model List<string> 
+       
+<div>
+           @if (Model.Count != 0) { 
+          
+               <p>Username:<b> @Model[0]</b></p>
+               <p>Authorised Type:@Model[1]</p>
+               <p>@Html.ActionLink("Logout","Logout","Account")</p>
+           
+           }
+           else
+{
+    <p>@Html.ActionLink("Login","Login","Account")</p>
+                   <p>@Html.ActionLink("Register","Register","Account")</p>
+
+}
+</div>
