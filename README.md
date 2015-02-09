@@ -9,3 +9,6 @@ Technical Information:
 
 
 I've been using a plenty of code from the book "ASP.NET MVC 5" of the author Adam Freeman.
+
+Below is a demo snapshot of this CMS.
+![alt tag](http://i59.tinypic.com/21ouc05.png)
